@@ -48,7 +48,7 @@ def encode_multipart(boundary, http_requests):
             lines.append('')
 
             # request  line (method + path + query params)
-            line = f'{req.get_method()} {req.get_path()}'
+            line = f'{req.get_method()} urlencode({req.get_path()})'
             query_params = urlencode(req.get_query_params())
             if query_params:
                 line += '?' + query_params
